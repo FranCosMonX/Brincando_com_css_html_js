@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=button, initial-scale=1.0">
     <link rel="stylesheet" href="./pages/home/style.css">
+    <script src="./pages/home/script.js"></script>
     <title>Jogo Quiz</title>
 </head>
 
@@ -16,16 +17,10 @@
                 <p id="descricao">Teste seu conhecimento com um quiz simples de inglês.</p>
             </div>
             <div id="jogar">
-                <button class="btn" onclick="redirecionar()">Jogar</button>
+                <button class="btn" onclick="configuracao_inicial()">Jogar</button>
             </div>
         </div>
     </main>
-
-    <script>
-        function redirecionar() {
-            window.location.replace("./pages/question/index.html");
-        }
-    </script>
 </body>
 
 </html>
