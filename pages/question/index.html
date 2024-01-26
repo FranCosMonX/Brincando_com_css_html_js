@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="./script.js"></script>
     <title>Questões</title>
 </head>
 
@@ -13,18 +12,17 @@
     <main id="app">
         <div id="conteudo">
             <div id="enumeracao">Questões 1/5</div>
-            <div id="enunciado">
-                <p>Enunciado da questao<br>asdsad<br>ss</p>
-            </div>
+            <div id="enunciado"></div>
             <div id="alternativas">
-                <div class="alternativa" id="A">A</div>
-                <div class="alternativa" id="B">B</div>
-                <div class="alternativa" id="C">C</div>
-                <div class="alternativa" id="D">D</div>
+                <div class="alternativa" id="A" onclick="escolhe_alternativa(this)">A</div>
+                <div class="alternativa" id="B" onclick="escolhe_alternativa(this)">B</div>
+                <div class="alternativa" id="C" onclick="escolhe_alternativa(this)">C</div>
+                <div class="alternativa" id="D" onclick="escolhe_alternativa(this)">D</div>
             </div>
-            <button id="btn-proximo" onclick="redirecionar()" enabled>Próximo</button>
+            <button id="btn-proximo" onclick="ir_para_o_proximo()">Próximo</button>
         </div>
     </main>
+    <script src="./script.js"></script>
 </body>
 
 </html>

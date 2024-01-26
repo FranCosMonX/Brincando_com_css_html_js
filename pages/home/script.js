@@ -1,4 +1,4 @@
-const quantidade_de_perguntas = 10;
+let quantidade_de_perguntas = 0;
 let indices = [];
 
 //funções de suporte
@@ -50,64 +50,40 @@ function dados_json(pergunta, resposta_Correta, todas_as_respostas) {
 //cadastro de perguntas e respostas
 function perguntas_e_respostas() {
     sessionStorage.setItem(0, dados_json(
-        'Um século tem quantos anos?',
-        100,
-        [50, 100, 1000, 1500]
+        'Como se diz "ela"?',
+        'she',
+        ['she', 'he', 'it', 'they']
     ));
     sessionStorage.setItem(1, dados_json(
-        'Que fruta é ressecada para se tornar uma ameixa seca?',
-        'ameixa',
-        ['Ameixa', 'Uva', 'Pêssego', 'Melão']
+        'Como se diz "Como vai você?"',
+        'How are you?',
+        ['I am fine thanks.', 'How are you?', 'What your name?', 'Where are you?']
     ));
     sessionStorage.setItem(2, dados_json(
-        'Quantas folhas tem um trevo da sorte?',
-        'Quatro',
-        ['Três', 'Quatro', 'Cinco', 'Seis']
-    ))
+        'Como se diz "Eles estão na biblioteca."',
+        'They are on library.',
+        ['They are on library.', 'They are at a library.', 'He is on library.', 'She is on library.']
+    ));
     sessionStorage.setItem(3, dados_json(
-        'O que é a Via Láctea?',
-        'Galáxia',
-        ['Marca de Leite', 'Civilização antiga', 'Marca de carro', 'Galáxia']
+        'Como se diz "Eu amo jogar."',
+        'I love to play.',
+        ['I love to play.', 'I like to play.', 'I am like to play', 'I love to play video game']
     ));
     sessionStorage.setItem(4, dados_json(
-        'Que personagem da "turma do Chaves" vive cobrando o aluguel do Seu Madruga?',
-        'Seu Barriga',
-        ['Kiko', 'Chaves', 'Seu Barriga', 'Professor Girafales']
-    ));
-    sessionStorage.setItem(5, dados_json(
-        'Que personagem da série "Chaves" é o pai da chiquinha?',
-        'Seu Madruga',
-        ['Nhonho', 'Seu Madruga', 'Seu Barriga', 'Professor Girafales']
-    ));
-    sessionStorage.setItem(6, dados_json(
-        'Que personagem dos quadrinhos usa um coelho como arma e tem dentes grandes?',
-        'Mônica',
-        ['Magali', 'Cebolinha', 'Cascão', 'Mônica']
-    ));
-    sessionStorage.setItem(7, dados_json(
-        'Que objeto usado na chuva o Pinguim do Batman usa como arma?',
-        'Guarda-chuva',
-        ['Guarda-chuva', 'Chapéu', 'Galocha', 'Capa']
-    ));
-    sessionStorage.setItem(8, dados_json(
-        'Qual a profissão dos Sete Anões?',
-        'Mineiros',
-        ['Mineiros', 'Lenhadores', 'Agricultores', 'Pastores']
-    ));
-    sessionStorage.setItem(9, dados_json(
-        'Quantos centavos tem um real?',
-        'Cem',
-        ['Dez', 'Mil', 'Cem', 'Cinquenta']
+        'Responda a pergunta: "I am very busy, but i am not tired. And you?"',
+        'I am very busy and very tired.',
+        ['Are you very busy?', 'I am very busy and very tired.', 'Oh, thank you very mutch.', 'This is Anna.']
     ));
 }
 
 //funcao principal a ser chamada
 function configuracao_inicial() {
+    quantidade_de_perguntas = 5;
+
     perguntas_e_respostas();
     gerar_ordem_das_perguntas();
     sessionStorage.setItem('indices', JSON.stringify(indices));
     sessionStorage.setItem('pontos', 0);
+    sessionStorage.setItem('quantidade de perguntas', quantidade_de_perguntas)
     window.location.replace("./pages/question/index.html");
 }
-
-configuracao_inicial();
