@@ -1,4 +1,4 @@
-const quantidade_de_perguntas = 2;
+let quantidade_de_perguntas = 0;
 let indices = [];
 
 //funções de suporte
@@ -59,10 +59,27 @@ function perguntas_e_respostas() {
         'How are you?',
         ['I am fine thanks.', 'How are you?', 'What your name?', 'Where are you?']
     ));
+    sessionStorage.setItem(2, dados_json(
+        'Como se diz "Eles estão na biblioteca."',
+        'They are on library.',
+        ['They are on library.', 'They are at a library.', 'He is on library.', 'She is on library.']
+    ));
+    sessionStorage.setItem(3, dados_json(
+        'Como se diz "Eu amo jogar."',
+        'I love to play.',
+        ['I love to play.', 'I like to play.', 'I am like to play', 'I love to play video game']
+    ));
+    sessionStorage.setItem(4, dados_json(
+        'Responda a pergunta: "I am very busy, but i am not tired. And you?"',
+        'I am very busy and very tired.',
+        ['Are you very busy?', 'I am very busy and very tired.', 'Oh, thank you very mutch.', 'This is Anna.']
+    ));
 }
 
 //funcao principal a ser chamada
 function configuracao_inicial() {
+    quantidade_de_perguntas = 5;
+
     perguntas_e_respostas();
     gerar_ordem_das_perguntas();
     sessionStorage.setItem('indices', JSON.stringify(indices));
