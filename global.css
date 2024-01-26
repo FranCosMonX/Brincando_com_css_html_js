@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background-color-primary: aquamarine;
+    --background-color-secondary: white;
+    --button-color-primary: aqua;
+    --button-color-secondary: rgb(3, 104, 104);
+    --background-color-font-primary: white;
+    --background-color-font-secondary: rgba(98, 241, 194, 0.829);
+}
+
+body {
+    /*dimensões*/
+    width: 100vw;
+    height: 100vh;
+
+    /*posicionamento*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--background-color-primary);
+}
+
+#conteudo {
+    /**dimenções*/
+    width: 50vw;
+    height: 50vh;
+    padding: 20px;
+
+    /*estilo*/
+    background-color: var(--background-color-secondary);
+    box-shadow: 5px 0px 10px black;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    background-color: var(--button-color-primary);
+    border: 0.1px solid var(--button-color-secondary);
+}
+
+button:hover {
+    background-color: var(--button-color-secondary);
+    border: 0.1px solid var(--button-color-primary);
+    transition: 500ms;
+}

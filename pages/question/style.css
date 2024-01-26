@@ -1,0 +1,48 @@
+@import url("../../global.css");
+
+#conteudo {
+    position: relative;
+    margin-bottom: 50px;
+    height: min-content;
+}
+
+#enumeracao {
+    width: max-content;
+
+    border-bottom: 2px solid var(--button-color-primary);
+    margin-bottom: 10px;
+}
+
+#enunciado {
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px;
+    background-color: var(--background-color-font-secondary);
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+#alternativas {
+    margin-bottom: 50px;
+}
+
+#btn-proximo {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.alternativa {
+    height: 20px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    border: 1.5px solid var(--background-color-font-secondary);
+    padding: 10px;
+}
+
+.alternativa:hover {
+    background-color: var(--background-color-font-secondary);
+}

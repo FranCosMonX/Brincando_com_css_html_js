@@ -1,0 +1,26 @@
+@import url("../../global.css");
+
+#conteudo {
+    position: relative;
+}
+
+#titulo {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 2px solid var(--background-color-primary);
+}
+
+#jogar {
+    /*dimnesões*/
+    width:
+        /*a mesma do pai*/
+        inherit;
+
+    /*posicionamento*/
+    position: absolute;
+    bottom: 20px;
+    /*posicionamento dos componentes*/
+    display: flex;
+    justify-content: center;
+}
