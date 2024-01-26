@@ -1,4 +1,4 @@
-const quantidade_de_perguntas = 10;
+const quantidade_de_perguntas = 2;
 let indices = [];
 
 //funções de suporte
@@ -50,54 +50,14 @@ function dados_json(pergunta, resposta_Correta, todas_as_respostas) {
 //cadastro de perguntas e respostas
 function perguntas_e_respostas() {
     sessionStorage.setItem(0, dados_json(
-        'Um século tem quantos anos?',
-        100,
-        [50, 100, 1000, 1500]
+        'Como se diz "ela"?',
+        'she',
+        ['she', 'he', 'it', 'they']
     ));
     sessionStorage.setItem(1, dados_json(
-        'Que fruta é ressecada para se tornar uma ameixa seca?',
-        'ameixa',
-        ['Ameixa', 'Uva', 'Pêssego', 'Melão']
-    ));
-    sessionStorage.setItem(2, dados_json(
-        'Quantas folhas tem um trevo da sorte?',
-        'Quatro',
-        ['Três', 'Quatro', 'Cinco', 'Seis']
-    ))
-    sessionStorage.setItem(3, dados_json(
-        'O que é a Via Láctea?',
-        'Galáxia',
-        ['Marca de Leite', 'Civilização antiga', 'Marca de carro', 'Galáxia']
-    ));
-    sessionStorage.setItem(4, dados_json(
-        'Que personagem da "turma do Chaves" vive cobrando o aluguel do Seu Madruga?',
-        'Seu Barriga',
-        ['Kiko', 'Chaves', 'Seu Barriga', 'Professor Girafales']
-    ));
-    sessionStorage.setItem(5, dados_json(
-        'Que personagem da série "Chaves" é o pai da chiquinha?',
-        'Seu Madruga',
-        ['Nhonho', 'Seu Madruga', 'Seu Barriga', 'Professor Girafales']
-    ));
-    sessionStorage.setItem(6, dados_json(
-        'Que personagem dos quadrinhos usa um coelho como arma e tem dentes grandes?',
-        'Mônica',
-        ['Magali', 'Cebolinha', 'Cascão', 'Mônica']
-    ));
-    sessionStorage.setItem(7, dados_json(
-        'Que objeto usado na chuva o Pinguim do Batman usa como arma?',
-        'Guarda-chuva',
-        ['Guarda-chuva', 'Chapéu', 'Galocha', 'Capa']
-    ));
-    sessionStorage.setItem(8, dados_json(
-        'Qual a profissão dos Sete Anões?',
-        'Mineiros',
-        ['Mineiros', 'Lenhadores', 'Agricultores', 'Pastores']
-    ));
-    sessionStorage.setItem(9, dados_json(
-        'Quantos centavos tem um real?',
-        'Cem',
-        ['Dez', 'Mil', 'Cem', 'Cinquenta']
+        'Como se diz "Como vai você?"',
+        'How are you?',
+        ['I am fine thanks.', 'How are you?', 'What your name?', 'Where are you?']
     ));
 }
 
@@ -109,5 +69,3 @@ function configuracao_inicial() {
     sessionStorage.setItem('pontos', 0);
     window.location.replace("./pages/question/index.html");
 }
-
-configuracao_inicial();
