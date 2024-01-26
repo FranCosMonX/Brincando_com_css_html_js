@@ -1,1 +1,24 @@
 @import url("../../global.css");
+
+#conteudo {
+    position: relative;
+}
+
+#parabenizacao {
+    font-size: 3em;
+    text-align: center;
+    margin: 30px;
+}
+
+#msg-acertos {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#btn {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
