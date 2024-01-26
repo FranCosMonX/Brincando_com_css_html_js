@@ -1,5 +1,6 @@
-const ordem_das_perguntas = JSON.parse(sessionStorage.getItem('indices')); //vetor de indices aleatorios
-let indice_da_ordem_atual = parseInt(0); //iterar sobre o vetor de indices de forma crescente 0,1... object.length
+const ordem_das_perguntas = JSON.parse(sessionStorage.getItem('indices'));
+let indice_da_ordem_atual = parseInt(0);
+let resposta_correta = "";
 
 function redirecionar() {
     window.location.replace("../score/index.html");
@@ -10,11 +11,11 @@ function mudar_estado_do_botao() {
 
     if (botao.disabled) botao.disabled = false;
     else botao.disabled = true;
-
 }
 
 function carregar_dados_da_questao() {
-    const pergunta = JSON.parse(sessionStorage.getItem(ordem_das_perguntas[indice_da_ordem_atual])); //carregando a primeira pegunta
+    const pergunta = JSON.parse(sessionStorage.getItem(ordem_das_perguntas[indice_da_ordem_atual]));
+    resposta_correta = pergunta.resposta;
 
     const enumeracao = document.getElementById('enumeracao');
     const texto_enumeracao = "Questões " + (parseInt(indice_da_ordem_atual) + 1) + "/" + ordem_das_perguntas?.length;
@@ -29,40 +30,52 @@ function carregar_dados_da_questao() {
     const alternativa_um = document.getElementById('A');
     const texto_A = "<p>" + alternativas[0] + "</p>";
     alternativa_um.innerHTML = texto_A;
+    alternativa_um.style.backgroundColor = "white";
 
     const alternativa_dois = document.getElementById('B');
     const texto_B = "<p>" + alternativas[1] + "</p>";
     alternativa_dois.innerHTML = texto_B;
+    alternativa_dois.style.backgroundColor = "white";
 
     const alternativa_tres = document.getElementById('C');
     const texto_C = "<p>" + alternativas[2] + "</p>";
     alternativa_tres.innerHTML = texto_C;
+    alternativa_tres.style.backgroundColor = "white";
 
     const alternativa_quatro = document.getElementById('D');
     const texto_D = "<p>" + alternativas[3] + "</p>";
     alternativa_quatro.innerHTML = texto_D;
+    alternativa_quatro.style.backgroundColor = "white";
 }
 
-//carregar os dados da primeira pegunta
 function inicio() {
     const elemento_btn_proximo = document.getElementById('btn-proximo');
-    elemento_btn_proximo.disabled = true; //desabilitando btn-proximo
+    elemento_btn_proximo.disabled = true;
 
     carregar_dados_da_questao();
 }
 
 function escolhe_alternativa(elemento) {
     const estado_btn = document.getElementById('btn-proximo').disabled;
+    console.log(resposta_correta)
 
     if (estado_btn == true) {
-        console.log(elemento.textContent);
-        mudar_estado_do_botao(); //habilita btn
+        if (resposta_correta === elemento.textContent) {
+            const pontos = parseInt(sessionStorage.getItem('pontos')) + 1;
+            sessionStorage.setItem('pontos', pontos);
+            console.log(pontos);
+            elemento.style.backgroundColor = "green";
+        } else {
+            elemento.style.backgroundColor = "red";
+        }
+        mudar_estado_do_botao();
     }
 }
 
 function ir_para_o_proximo() {
     const qtd_perguntas = ordem_das_perguntas.length;
     indice_da_ordem_atual = indice_da_ordem_atual + 1;
+
     if (indice_da_ordem_atual >= qtd_perguntas) {
         redirecionar();
     } else {
