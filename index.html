@@ -31,11 +31,15 @@
             <p>Primeiramente falando sobre divisão de áreas:</p>
             <ul>
                 <li><b>main:</b> área onde ficará o conteúdo principal da página.</li>
+                <li><b>header:</b> definir um cabeçalho para a página. Geralmente contém o menu.</li>
                 <li><b>section:</b> definir sessões da página como capitulo, rodapé e cabeçalho do documento.</li>
                 <li><b>div:</b> container genérico usado para organizar e estilzar componentes no HTML.</li>
                 <li><b>footer:</b> é usada para definir um rodapé para um documento ou uma seção. Normalmente
                     contém informações sobre o autor do documento, direitos autorais,
                     links para termos de uso, informações de contato, etc</li>
+                <li><b>nav:</b> Este elemento é destinado apenas para grupos importantes de links de navegação.
+                    Nem todos os links de um documento devem estar dentro de um elemento "nav". Tipicamente,
+                    o elemento "footer" contém uma lista de links que não precisam estar em um elemento "nav".</li>
                 <li><b>blockquote:</b> área para mostrar códigos.</li>
             </ul>
             <p>Exemplo:</p>
@@ -44,10 +48,10 @@
                 print("hello world")
             </blockquote>
         </section>
+        <footer style="font-style: italic; text-align: center;">
+            <p>Criado em 28/01/2024</p>
+        </footer>
     </main>
-    <footer style="background-color: rgb(137, 231, 255); width: 100vw; height: 20vh; position: flex;">
-
-    </footer>
 </body>
 
 </html>
