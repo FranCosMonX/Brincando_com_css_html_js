@@ -9,10 +9,12 @@
     --menubar-color-primary: rgb(3, 104, 104);
     --background-color-primary: aquamarine;
     --background-color-secondary: white;
-    --button-color-primary: aqua;
-    --button-color-secondary: rgb(3, 104, 104);
     --background-color-font-primary: white;
     --background-color-font-secondary: rgba(98, 241, 194, 0.829);
+    --background-color-blockquote: rgb(168, 168, 168);
+    --font-color-blockquote: rgb(1, 68, 1);
+    --button-color-primary: aqua;
+    --button-color-secondary: rgb(3, 104, 104);
 }
 
 body {
@@ -27,6 +29,19 @@ body {
     align-items: center;
 
     background-color: var(--background-color-primary);
+}
+
+blockquote {
+    width: 100%;
+    padding: 20px;
+    height: min-content;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    background-color: var(--background-color-blockquote);
+    border: 2px solid black;
+
+    font-family: sans-serif;
 }
 
 #conteudo {
@@ -51,4 +66,18 @@ button:hover {
     background-color: var(--button-color-secondary);
     border: 0.1px solid var(--button-color-primary);
     transition: 500ms;
+}
+
+p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+ul,
+ol {
+    margin-left: 1em;
 }
