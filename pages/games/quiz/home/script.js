@@ -85,5 +85,5 @@ function configuracao_inicial() {
     sessionStorage.setItem('indices', JSON.stringify(indices));
     sessionStorage.setItem('pontos', 0);
     sessionStorage.setItem('quantidade de perguntas', quantidade_de_perguntas)
-    window.location.replace("./pages/question/index.html");
+    window.location.replace("../question/index.html");
 }

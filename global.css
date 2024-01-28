@@ -4,6 +4,8 @@
 }
 
 :root {
+    --menubar-font-color: white;
+    --menubar-color-primary: rgb(3, 104, 104);
     --background-color-primary: aquamarine;
     --background-color-secondary: white;
     --button-color-primary: aqua;
@@ -19,6 +21,7 @@ body {
 
     /*posicionamento*/
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 

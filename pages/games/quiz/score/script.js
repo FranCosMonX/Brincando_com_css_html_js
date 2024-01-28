@@ -1,5 +1,5 @@
 function redirecionar() {
-    window.location.replace("../../index.html");
+    window.location.replace("../home/index.html");
 }
 
 function execute() {
