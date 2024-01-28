@@ -45,4 +45,10 @@
 
 .alternativa:hover {
     background-color: var(--background-color-font-secondary);
+    cursor: pointer;
+}
+
+.alternativa:active {
+    transition: 500ms;
+    background-color: var(--background-color-font-secondary);
 }
