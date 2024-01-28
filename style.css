@@ -1,33 +1,10 @@
 @import url("./global.css");
-
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
+@import url("./styles/menu.css");
 
 body {
     justify-content: flex-start;
-    padding-top: 70px;
 }
 
-#menu-bar {
-    background-color: var(--menubar-color-primary);
-    width: 100vw;
-    padding: 20px;
-    margin-bottom: 20px;
-    position: fixed;
-    left: 0;
-    top: 0;
-}
-
-#menu-bar a {
-    text-decoration: none;
-    color: var(--menubar-font-color);
-}
-
-#menu-bar li {
-    display: inline-block;
-    list-style: none;
-    margin: 0 10px;
+#conteudo {
+    height: min-content;
 }

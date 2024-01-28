@@ -1,0 +1,24 @@
+body {
+    padding-top: 70px;
+}
+
+#menu-bar {
+    background-color: var(--menubar-color-primary);
+    width: 100vw;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+#menu-bar a {
+    text-decoration: none;
+    color: var(--menubar-font-color);
+}
+
+#menu-bar li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 10px;
+}
