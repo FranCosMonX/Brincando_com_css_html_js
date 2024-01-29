@@ -29,19 +29,24 @@ body {
     align-items: center;
 
     background-color: var(--background-color-primary);
+
+    text-align: justify;
 }
 
 blockquote {
     width: 100%;
     padding: 20px;
     height: min-content;
-    margin-top: 10px;
-    margin-bottom: 10px;
 
     background-color: var(--background-color-blockquote);
     border: 2px solid black;
 
     font-family: sans-serif;
+}
+
+.area-de-codigo {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #conteudo {
