@@ -38,11 +38,13 @@
 .alternativa {
     height: 20px;
     margin-bottom: 10px;
+    background-color: white;
     border-radius: 15px;
     border: 1.5px solid var(--background-color-font-secondary);
     padding: 10px;
 }
 
 .alternativa:hover {
-    background-color: var(--background-color-font-secondary);
+    cursor: pointer;
+    background-color: rgba(98, 241, 194, 0.829);
 }

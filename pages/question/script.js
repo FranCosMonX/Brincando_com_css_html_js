@@ -27,25 +27,14 @@ function carregar_dados_da_questao() {
 
     const alternativas = pergunta.todas_as_respostas;
 
-    const alternativa_um = document.getElementById('A');
-    const texto_A = "<p>" + alternativas[0] + "</p>";
-    alternativa_um.innerHTML = texto_A;
-    alternativa_um.style.backgroundColor = "white";
-
-    const alternativa_dois = document.getElementById('B');
-    const texto_B = "<p>" + alternativas[1] + "</p>";
-    alternativa_dois.innerHTML = texto_B;
-    alternativa_dois.style.backgroundColor = "white";
-
-    const alternativa_tres = document.getElementById('C');
-    const texto_C = "<p>" + alternativas[2] + "</p>";
-    alternativa_tres.innerHTML = texto_C;
-    alternativa_tres.style.backgroundColor = "white";
-
-    const alternativa_quatro = document.getElementById('D');
-    const texto_D = "<p>" + alternativas[3] + "</p>";
-    alternativa_quatro.innerHTML = texto_D;
-    alternativa_quatro.style.backgroundColor = "white";
+    //importante notar: como a resposta esta sendo comparada com o txt do html, não pode haver espaçamento entre as tags resgatadas usando `
+    const campoAlternativas = document.getElementById('alternativas');
+    const texto = `
+    <div class="alternativa" id="A" onclick="escolhe_alternativa(this)"><p>${alternativas[0]}</p></div>
+    <div class="alternativa" id="B" onclick="escolhe_alternativa(this)"><p>${alternativas[1]}</p></div>
+    <div class="alternativa" id="C" onclick="escolhe_alternativa(this)"><p>${alternativas[2]}</p></div>
+    <div class="alternativa" id="D" onclick="escolhe_alternativa(this)"><p>${alternativas[3]}</p></div>`;
+    campoAlternativas.innerHTML = texto;
 }
 
 function inicio() {
@@ -58,14 +47,15 @@ function inicio() {
 function escolhe_alternativa(elemento) {
     const estado_btn = document.getElementById('btn-proximo').disabled;
     console.log(resposta_correta)
-
     if (estado_btn == true) {
         if (resposta_correta === elemento.textContent) {
             const pontos = parseInt(sessionStorage.getItem('pontos')) + 1;
             sessionStorage.setItem('pontos', pontos);
-            console.log(pontos);
-            elemento.style.backgroundColor = "green";
+            console.log(elemento?.id);
+            document.getElementById(elemento?.id).style.backgroundColor = "green";
+            //elemento.style.backgroundColor = "green";
         } else {
+            console.log(elemento?.id);
             elemento.style.backgroundColor = "red";
         }
         mudar_estado_do_botao();
