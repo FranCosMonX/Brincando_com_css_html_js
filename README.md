@@ -27,6 +27,58 @@ Math.floor(Math.random() * 5)
 
 Isto resolve o problema do número aleatório ser gerado, mas como evitar a repetição de números dentro do vetor?
 
+Como mencionado anteriormente, o vetor terá o tamanho N, sendo N a quantidade de perguntas do Quiz. Para preencher este vetor com números aleatórios sem que haja repetição basta verificar, antes de o acionar no vetor, se ele está no vetor, se ele não tiver basta gerar um novo numero e fazer a mesma verificação. Com isto, percebe-se que estaríamos dentro de um loop, então qual seria a condição de saída? Simplesmente quando o vetor ficar cheio, ou seja, o loop existirá até que `length(vetor) < N`. Para ficar ainda mais claro, veja o pseudo-código:
+```
+VAR
+vetor : []
+contador : inteiro
+valor, limMax : inteiro
+
+INICIO NUMERO_ALEATORIO(arg)
+    returna floor(random() * arg)
+FIM NUMERO_ALEATORIO
+
+INICIO VALOR_JA_EXISTE (a)
+  retorna vetor.contem(a)
+FIM VALOR_JA_EXISTE
+
+INICIO
+limMax = 5
+ENQUANTO tamanho(vetor) < N FAÇA
+  valor = NUMERO_ALEATORIO(limMax)
+  SE VALOR_JA_EXISTE (valor) FAÇA
+    // repete o loop
+  SENÃO FAÇA
+    valor.inclui(valor)
+FIMENQUANTO
+```
+
+Vale citar que em JS é usado `<vetor>.includes(valor)` para verificar se um valor já está contido no vetor e `<vetor>.push(valor)` para adicionar um valor ao vetor. O código real em JS seria o seguinte:
+
+```javascript
+const vetor = [];
+
+function gerar_numero_aleatorio(limite) {
+    return Math.floor(Math.random() * limite);
+}
+
+function indice_ja_se_encontra(indice) { //retorna true se já existe e false se não existe
+    return vetor.includes(indice);
+}
+
+function embaralhar_vetor() {
+    const tamanho = 5;
+    while (vetor.length < tamanho) {
+        const valor = gerar_numero_aleatorio(tamanho);
+        if (!indice_ja_se_encontra(valor)) {
+            vetor.push(valor);
+        }
+    }
+}
+embaralhar_vetor();
+console.log(vetor);
+```
+
 #### Problemas enfrentados
 
 O estilo da pseudo-classe :hover das alternativas estava sendo sobrescritos ao tentar alterar a cor de fundo para a cor inicial após o usuário selecionar uma das alternativas (que faz com que o campo fique verde ou vermelho).
