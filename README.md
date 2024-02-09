@@ -50,6 +50,7 @@ ENQUANTO tamanho(vetor) < N FAÇA
     // repete o loop
   SENÃO FAÇA
     valor.inclui(valor)
+  FIMSE
 FIMENQUANTO
 ```
 
